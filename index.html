@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Academy - Free Fire Hacks & Mods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff4500;
+            --secondary: #1a1a1a;
+            --accent: #00ff88;
+            --dark: #0a0a0a;
+            --light: #ffffff;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-top: -5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Hacks Section */
+        .hacks-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .hacks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .hack-card {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hack-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,69,0,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .hack-card:hover::before {
+            left: 100%;
+        }
+
+        .hack-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255,69,0,0.3);
+        }
+
+        .hack-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .hack-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .hack-price {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--primary), #ff8c00);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,69,0,0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--accent);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .form-group select option {
+            background: #1a1a1a;
+            color: white;
+            padding: 10px;
+        }
+
+        .auto-filled-field {
+            background: #1a1a1a !important;
+            color: #ffd700 !important;
+            font-weight: bold;
+            border: 2px solid #00ff88 !important;
+            cursor: not-allowed;
+            text-align: center;
+        }
+
+        .field-note {
+            font-size: 0.8rem;
+            color: #00ff88;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #0a0a0a;
+            padding: 50px 0 20px;
+            border-top: 2px solid var(--primary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hacks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🎯</div>
+                <div>
+                    <div class="logo-text">AJ ACADEMY</div>
+                    <div class="tagline">Free Fire Professional Hacks</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>PROFESSIONAL <span class="highlight">FREE FIRE</span> HACKS</h1>
+            <p>100% Safe • Undetectable • Easy to Use</p>
+            <p>Join 10,000+ Satisfied Players Worldwide</p>
+        </div>
+    </section>
+
+    <!-- Hacks Section -->
+    <section class="hacks-section">
+        <h2 class="section-title">PREMIUM HACKS COLLECTION</h2>
+        <div class="hacks-grid">
+            <!-- Hack 1 -->
+            <div class="hack-card" onclick="showHackDetails('basic')">
+                <div class="hack-badge">MOST POPULAR</div>
+                <h3 class="hack-title">BASIC HEADSHOT HACK</h3>
+                <div class="hack-price">₹200</div>
+                <ul class="features-list">
+                    <li>30% Headshot Rate Increase</li>
+                    <li>Increased Sensitivity</li>
+                    <li>Advanced Antiban System</li>
+                    <li>Drag Headshot Feature</li>
+                    <li>Auto Aim Assistance</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <button class="btn" onclick="purchaseHack('basic')">PURCHASE NOW</button>
+            </div>
+
+            <!-- Hack 2 -->
+            <div class="hack-card" onclick="showHackDetails('pro')">
+                <div class="hack-badge">PRO VERSION</div>
+                <h3 class="hack-title">PRO HEADSHOT HACK</h3>
+                <div class="hack-price">₹300</div>
+                <ul class="features-list">
+                    <li>50% Headshot Rate Increase</li>
+                    <li>Smart Camera Control</li>
+                    <li>Premium Antiban</li>
+                    <li>Drag Headshot Master</li>
+                    <li>No Recoil Feature</li>
+                    <li>Priority Support</li>
+                </ul>
+                <button class="btn" onclick="purchaseHack('pro')">PURCHASE NOW</button>
+            </div>
+
+            <!-- Hack 3 -->
+            <div class="hack-card" onclick="showHackDetails('ultimate')">
+                <div class="hack-badge">ULTIMATE</div>
+                <h3 class="hack-title">ULTIMATE HEADSHOT HACK</h3>
+                <div class="hack-price">₹500</div>
+                <ul class="features-list">
+                    <li>80% Headshot Rate Increase</li>
+                    <li>360° Camera Control</li>
+                    <li>High Sensitivity Boost</li>
+                    <li>Military Grade Antiban</li>
+                    <li>Auto Drag Headshot</li>
+                    <li>VIP Support 24/7</li>
+                </ul>
+                <button class="btn" onclick="purchaseHack('ultimate')">PURCHASE NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hack Details Modal -->
+    <div id="hackModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('hackModal')">&times;</button>
+            <h2 id="modalTitle">HACK DETAILS</h2>
+            <div id="modalContent">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('purchaseModal')">&times;</button>
+            <h2>PURCHASE HACK</h2>
+            <div style="background: rgba(0,255,136,0.1); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #00ff88;">
+                <h3 style="color: #00ff88; margin-bottom: 10px;">📝 Instructions:</h3>
+                <p style="color: white; margin: 5px 0;">• Fill your personal details below</p>
+                <p style="color: white; margin: 5px 0;">• Hack and Amount will be auto-filled</p>
+                <p style="color: white; margin: 5px 0;">• Click "COMPLETE PURCHASE" to proceed</p>
+            </div>
+            
+            <form id="purchaseForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label for="name">Full Name: *</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number: *</label>
+                    <input type="tel" id="mobile" required placeholder="Enter your WhatsApp number">
+                </div>
+                <div class="form-group">
+                    <label for="device">Android Device Name: *</label>
+                    <select id="device" required>
+                        <option value="">Select Your Device</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Xiaomi">Xiaomi (Redmi, Poco)</option>
+                        <option value="OnePlus">OnePlus</option>
+                        <option value="Oppo">Oppo</option>
+                        <option value="Vivo">Vivo</option>
+                        <option value="Realme">Realme</option>
+                        <option value="Motorola">Motorola</option>
+                        <option value="Google Pixel">Google Pixel</option>
+                        <option value="Other">Other Brand</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deviceModel">Device Model (Optional):</label>
+                    <input type="text" id="deviceModel" placeholder="e.g., Redmi Note 10, Samsung Galaxy S21">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hack">Selected Hack: <span style="color: #00ff88;">(Auto-filled)</span></label>
+                    <input type="text" id="hack" class="auto-filled-field" readonly>
+                    <div class="field-note">This field is automatically filled based on your selection</div>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount to Pay: <span style="color: #00ff88;">(Auto-filled)</span></label>
+                    <input type="text" id="amount" class="auto-filled-field" readonly>
+                    <div class="field-note">This field is automatically filled based on your selection</div>
+                </div>
+                <button type="submit" class="btn">COMPLETE PURCHASE</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>About AJ Academy</h3>
+                <p>Providing premium Free Fire hacks since 2020. Trusted by thousands of players worldwide.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="features-list">
+                    <li><a href="#" style="color: var(--accent); text-decoration: none;">Home</a></li>
+                    <li><a href="#" style="color: var(--accent); text-decoration: none;">Hacks</a></li>
+                    <li><a href="#" style="color: var(--accent); text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://t.me/AJacademy963" class="social-btn" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://wa.me/917453845660" class="social-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:johariankan96@gmail.com" class="social-btn" target="_blank">
+                <i class="far fa-envelope"></i> Gmail
+            </a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 AJ Academy. All rights reserved. | Professional Free Fire Hacks</p>
+        </div>
+    </footer>
+
+    <script>
+        // Define hack details globally
+        const hackDetails = {
+            basic: {
+                title: "BASIC HEADSHOT HACK",
+                price: "₹200",
+                features: [
+                    "🎯 30% Headshot Rate Increase - Automatically improves your headshot accuracy",
+                    "⚡ Increased Sensitivity - Better control and faster response",
+                    "🛡️ Advanced Antiban System - Completely undetectable by FF security",
+                    "🎮 Drag Headshot Feature - Headshots while dragging scope",
+                    "🎯 Auto Aim Assistance - Smart targeting system",
+                    "📞 24/7 Customer Support - Always available to help",
+                    "🔄 Easy Installation - Simple setup process",
+                    "📱 Mobile Compatible - Works on all devices"
+                ],
+                description: "Perfect for beginners who want to improve their gameplay without being too obvious."
+            },
+            pro: {
+                title: "PRO HEADSHOT HACK", 
+                price: "₹300",
+                features: [
+                    "🎯 50% Headshot Rate Increase - Professional level accuracy",
+                    "📷 Smart Camera Control - Automatic angle adjustment",
+                    "🛡️ Premium Antiban - Military grade protection",
+                    "🎮 Drag Headshot Master - Perfect drag headshots every time", 
+                    "🔫 No Recoil Feature - Zero weapon recoil",
+                    "⭐ Priority Support - Fast response time",
+                    "🔄 One-Click Setup - Instant activation",
+                    "📊 Performance Analytics - Track your improvement"
+                ],
+                description: "For serious players who want competitive advantage with advanced features."
+            },
+            ultimate: {
+                title: "ULTIMATE HEADSHOT HACK",
+                price: "₹500",
+                features: [
+                    "🎯 80% Headshot Rate Increase - Almost perfect accuracy",
+                    "🌪️ 360° Camera Control - Complete view control",
+                    "⚡ High Sensitivity Boost - Ultra-fast response", 
+                    "🛡️ Military Grade Antiban - Maximum security",
+                    "🎮 Auto Drag Headshot - Fully automated system",
+                    "👑 VIP Support 24/7 - Dedicated assistance",
+                    "🚀 Instant Activation - No waiting time",
+                    "📈 Advanced Statistics - Detailed performance tracking"
+                ],
+                description: "The ultimate hack for professional players who want the best possible performance."
+            }
+        };
+
+        // Current selected hack
+        let currentHack = '';
+
+        // Show Hack Details
+        function showHackDetails(hackType) {
+            const hack = hackDetails[hackType];
+            document.getElementById('modalTitle').textContent = hack.title + " - " + hack.price;
+            
+            let content = `<p><strong>${hack.description}</strong></p><ul>`;
+            hack.features.forEach(feature => {
+                content += `<li style="margin-bottom: 10px;">${feature}</li>`;
+            });
+            content += `</ul><button class="btn" onclick="purchaseHack('${hackType}')" style="margin-top: 20px;">PURCHASE NOW</button>`;
+            
+            document.getElementById('modalContent').innerHTML = content;
+            document.getElementById('hackModal').style.display = 'block';
+        }
+
+        // Purchase Hack function
+        function purchaseHack(hackType) {
+            currentHack = hackType;
+            const hack = hackDetails[hackType];
+            
+            console.log("Purchasing hack:", hackType);
+            console.log("Hack title:", hack.title);
+            console.log("Hack price:", hack.price);
+            
+            // Auto-fill the fields
+            document.getElementById('hack').value = hack.title;
+            document.getElementById('amount').value = hack.price;
+            
+            // Reset other form fields
+            document.getElementById('name').value = '';
+            document.getElementById('mobile').value = '';
+            document.getElementById('device').value = '';
+            document.getElementById('deviceModel').value = '';
+            
+            // Show the modal
+            document.getElementById('purchaseModal').style.display = 'block';
+            closeModal('hackModal');
+            
+            // Focus on first input field
+            document.getElementById('name').focus();
+            
+            // Debug info
+            alert("✅ Hack selected: " + hack.title + "\n💰 Price: " + hack.price + "\n\nNow fill your details below!");
+        }
+
+        // Close Modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Submit Order
+        function submitOrder(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const device = document.getElementById('device').value;
+            const deviceModel = document.getElementById('deviceModel').value;
+            const hack = document.getElementById('hack').value;
+            const amount = document.getElementById('amount').value;
+            
+            if (!name || !mobile || !device) {
+                alert("❌ Please fill all required fields!");
+                return;
+            }
+            
+            // Create WhatsApp message
+            const message = `🛒 NEW HACK ORDER 🛒%0A%0A` +
+                          `👤 Name: ${name}%0A` +
+                          `📱 Mobile: ${mobile}%0A` +
+                          `📱 Device: ${device}%0A` +
+                          `📱 Model: ${deviceModel || 'Not specified'}%0A` +
+                          `🎯 Hack: ${hack}%0A` +
+                          `💰 Amount: ${amount}%0A` +
+                          `🕒 Time: ${new Date().toLocaleString()}%0A%0A` +
+                          `🚀 Order from AJ Academy Website`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/917453845660?text=${message}`, '_blank');
+            
+            // Show success message
+            alert('✅ Order submitted successfully! You will be redirected to WhatsApp to complete the payment.');
+            
+            // Close modal and reset form
+            closeModal('purchaseModal');
+            document.getElementById('purchaseForm').reset();
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Console welcome message
+        console.log('🎮 Welcome to AJ Academy Free Fire Hacks!');
+        console.log('🚀 Professional gaming solutions since 2020');
+        
+        // Test function - manually call this to check
+        function testHackSelection() {
+            console.log("Testing hack selection...");
+            purchaseHack('basic');
+        }
+    </script>
+</body>
+</html>
